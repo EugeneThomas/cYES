@@ -1,0 +1,70 @@
+ _______   ________  __     __  __        ______    ______
+|       \ |        \|  \   |  \|  \      /      \  /      \
+| $$$$$$$\| $$$$$$$$| $$   | $$| $$     |  $$$$$$\|  $$$$$$\
+| $$  | $$| $$__    | $$   | $$| $$     | $$  | $$| $$ __\$$
+| $$  | $$| $$  \    \$$\ /  $$| $$     | $$  | $$| $$|    \
+| $$  | $$| $$$$$     \$$\  $$ | $$     | $$  | $$| $$ \$$$$
+| $$__/ $$| $$_____    \$$ $$  | $$_____| $$__/ $$| $$__| $$
+| $$    $$| $$     \    \$$$   | $$     \\$$    $$ \$$    $$
+ \$$$$$$$  \$$$$$$$$     \$     \$$$$$$$$ \$$$$$$   \$$$$$$
+
+
+/////////// Zone of Reflection \\\\\\\\\\\
+------------------------------------------
+OBSTACLES OVERCOME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+UNRESOLVED ISSUES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+COOL STUFF LEARNED
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+MID-DEVELOPMENT DESIGN CHANGES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LESSONS LEARNED
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+===============================================================
+COPY AND PASTE THE FOLLOWING TEMPLATE FOR ENTRIES....
+
+topherM -- 1999-12-31 23:59
+===============================================================
+
+============================================================
+               THE DEVELOPMENT LOG ITSELF...
+============================================================
+
+ngoS, panC, thomasE, zhangY -- 2017-11-13 13:18
+All members discussed possible project ideas. The majority of the day was used to research on APIs and see what was most reasonable. Assigned general positions.
+
+ngoS, panC, thomasE, zhangY -- 2017-11-14 13:18
+Members of the team pinned down of project ideas. Expanded on decision for leisure/weather project.
+
+thomasE -- 2017-11-15 13:18
+As Project Manager, this member delegated all of the roles to the team.
+
+ngoS -- 2017-11-15 13:18
+This group member is in charge of back end programming and the handling of the APIs.
+
+panC -- 2017-11-15 13:18
+This group member is in charge of back end programming and the handling of databases.
+
+zhangY -- 2017-11-15 13:18
+This group member is in charge of front end programming, especially the handling of design, Jinja, and Bootstrap/HTML
+
+zhangY -- 2017-11-16 21:52
+As a part of the design document, this group member created a site map for the website and began handling design duties such as creating a logo for the homepage.
+
+panC -- 2017-11-16 21:54
+As a part of the design document, this group member created a component map and a database schema.
+
+ngoS -- 2017-11-16 21:55
+As a part of the design document, this group member began to research each of the APIs we are using. Also, she was able to procure the true keys to success: API keys.
+
+thomasE -- 2017-11-16 21:56
+As project manager, this group member ensure the entire design document was finished, writing the abstract and jobs sections. Also, the PM was updating the devlog as of writing this and is ready to push all of the work for the night.
+
+============================================================

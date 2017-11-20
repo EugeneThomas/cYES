@@ -67,4 +67,9 @@ As a part of the design document, this group member began to research each of th
 thomasE -- 2017-11-16 21:56
 As project manager, this group member ensure the entire design document was finished, writing the abstract and jobs sections. Also, the PM was updating the devlog as of writing this and is ready to push all of the work for the night.
 
+zhangY —- 2017-11-17 11:00
+Began planning out bootstrap and grid system for website. Reviewed design plan to update charts.
+
+zhangY —- 2017-19-17 23:15
+Updated site map to be in conditions of current plan. Updated base.html to incorporate bootstrap.
 ============================================================

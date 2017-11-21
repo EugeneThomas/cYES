@@ -72,4 +72,11 @@ Began planning out bootstrap and grid system for website. Reviewed design plan t
 
 zhangY —- 2017-19-17 23:15
 Updated site map to be in conditions of current plan. Updated base.html to incorporate bootstrap.
+
+ngoS, panC, thomasE, zhangY -- 2017-11-21 13:18
+Developed our finalized plan for the project. For tonight, skeletons pertaining to the project should be made for the templates as well as the app.py flask file. 
+Some of the biggest breakthroughs we had today included: 
+1. The ditching of our idea of caching data (it would not be logical since the temperature is subject to change and a lot of the leisure activities you can do are          dependent on weather. 
+2. Our logo for our website has changed to a more abstract and geometric interpretation of a sun!
+3. One of the more risky design ideas for our site was the self-procuring of API keys. In order to not overstuff our quota, the first time a user makes an account, they will be prompted to get an API key, with a plethora of details on receiving them. Then, they will be asked to enter in the API key as a part of creating an account. This will then be stored in a database, along with the user's account, password, and basic information. 
 ============================================================

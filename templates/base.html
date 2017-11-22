@@ -15,15 +15,15 @@ P01 -- ArRESTed Development
   
   <body>
     
-<div class="jumbotron text-center">
-  <h1>Cloudy With a Chance of Skeeballs</h1>
+<div class="jumbotron text-center" style = "background-color: #8ab2e2">
+  <h1 style = "color: #f7af07">Cloudy With a Chance of Skeeballs</h1>
 
  
 <center>
 <form>
   <div class="form-group">
     <label for="name">Please enter your name</label>
-    <input type="name" class="form-control" id="name">
+    <input type="name" class="form-control" id="name" style = "width: 50%; background-color: #bad2ef" placeholder = "Name">
   </div>
 </form>
 
@@ -32,23 +32,42 @@ P01 -- ArRESTed Development
 <form>
   <div class="form-group">
     <label for="zipcode">Please enter your zipcode</label>
-    <input type="zipcode" class="form-control" id="zipcode">
+    <input type="zipcode" class="form-control" id="zipcode" style = "width: 50%; background-color: #bad2ef" placeholder = "Zipcode">
   </div>
+  
 </form>
 
 <hr>
 
 <label for="zipcode">Please enter your age group</label>
 <br>
-<button type="button" class="btn btn-warning btn-lg">Student</button>
- <button type="button" class="btn btn-warning btn-lg">Adult</button>
 
+<div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-warning btn-lg">
+        <input type="radio" name="age_group" id="student"> Student
+      </label>
+      <label class="btn btn-warning btn-lg">
+        <input type="radio" name="age_group" id="adult"> Adult
+      </label>
+</div>
  <hr>
 
  <label for="zipcode">Please indicate where you want to be</label>
 <br>
-<button type="button" class="btn btn-warning btn-lg">Indoors</button>
- <button type="button" class="btn btn-warning btn-lg">Outdoors</button>
+<div class="btn-group" data-toggle="buttons">
+       <label class="btn btn-warning btn-lg">
+        <input type="radio" name="location" id="indoors">  Indoors
+      </label>
+      <label class="btn btn-warning btn-lg">
+        <input type="radio" name="location" id="outdoors"> Outdoors
+      </label>
+</div>
 
+<hr>
+<label for="disclaimer">Have you saved your API keys yet?</label>
+<br>
+ <label class="btn btn-warning btn-lg">
+        <input type="radio" name="api" id="api"> Show me!
+      </label>
   </body>
 </html>

@@ -63,25 +63,27 @@ Updated site map to be in conditions of current plan. Updated base.html to incor
 ngoS, panC, thomasE, zhangY -- 2017-11-21 13:18
 Developed our finalized plan for the project. For tonight, skeletons pertaining to the project should be made for the templates as well as the app.py flask file. 
 Some of the biggest breakthroughs we had today included: 
-1. The ditching of our idea of caching data (it would not be logical since the temperature is subject to change and a lot of the leisure activities you can do are          dependent on weather. 
+1. The ditching of our idea of caching data (it would not be logical since the temperature is subject to change and a lot of the leisure activities you can do are dependent on weather. 
 2. Our logo for our website has changed to a more abstract and geometric interpretation of a sun!
 3. API keys now have an appropriate text file and will be read by app.py
 
-ngoS, panC, thomasE —- 2017-11-22 13:00
+ngoS, panC, thomasE -- 2017-11-22 13:00
 Fixed up the design document for the first half of class, ensuring that the root directory of the repo had the most updated version. In addition, “THE PLAN” page in our shared Google Drive folder was updated, detailing what we have to do in order to complete the project as well as additional and optional tasks we can undertake as well. 
 
-ngoS —- 2017-11-22 13:17
+ngoS -- 2017-11-22 13:17
 For the remaining portion of class, this member did research on the event APIs and asked a very important question: since there exists an SDK (software development kit) for EventBrite, are we allowed to use it? 
 
-panC —- 2017-11-22 13:17
+panC -- 2017-11-22 13:17
 For the remainder of the period, this member did more research on the Weather Channel/Wunderground APIs, comparing and contrasting the two. 
 
-thomasE —- 2017-11-22 13:17
+thomasE -- 2017-11-22 13:17
 For the remainder of the period, the project manager answered questions from both Mr. Brown and his groupmates. Also, the project manager made sure that the repo was as updated as possible, with all of the most up-to-date files in the repo by the end of the period. 
 
-zhangY —- 2017-11-22 13:17
+zhangY -- 2017-11-22 13:17
 For the entirety of the period, continued to work on the front end of the webpage, comparing and contrasting different stylistic choices in bootstrap while trying to make the front end of the code come to life.
 
+panC -- 2017-11-22 22:05
+Procured api keys to be tested and successfully made api calls using those keys (code for these actions have been placed in util/api_calls.py). Created super basic homepage that asks for zipcode and age. Made basic template that displayed resulting information, such as the weather and recommended books. Both templates are to be replaced at a later date. Updated README.md so the functionality at this moment is available for use.
 ============================================================
 
 

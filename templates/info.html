@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Info</title>
+  </head>
+  
+  <body>
+    <h2>The Weather</h2>
+    <br>
+    {% for period in weatherdata["forecast"]["txt_forecast"]["forecastday"] %}
+    <b>{{period["title"]}}</b> <br>
+    Desciption: {{period["fcttext"]}}
+    <br><br>
+    {% endfor %}
+    
+
+    
+   <h2>Book Recommendations</h2>
+    <br>
+    {% for book in bookdata["results"] %}
+    Book: {{book["title"]}} {{book["contributor"]}}
+    <br>
+    Description: {{book["description"]}}
+    <br><br>
+    {% endfor %}
+  </body>
+</html>

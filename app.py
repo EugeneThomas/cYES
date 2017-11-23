@@ -8,8 +8,6 @@ P01 -- ArRESTed Development
 
 from flask import Flask, render_template, request
 from flask import redirect, flash, url_for
-import urllib2
-import json
 from util import api_calls as api
 
 app = Flask (__name__)

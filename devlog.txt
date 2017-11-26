@@ -84,6 +84,9 @@ For the entirety of the period, continued to work on the front end of the webpag
 
 panC -- 2017-11-22 22:05
 Procured api keys to be tested and successfully made api calls using those keys (code for these actions have been placed in util/api_calls.py). Created super basic homepage that asks for zipcode and age. Made basic template that displayed resulting information, such as the weather and recommended books. Both templates are to be replaced at a later date. Updated README.md so the functionality at this moment is available for use.
+
+zhangY — 2017-11-25 23:00
+Updated radio buttons and forms in base.html to be under one submit button. Incorporated a bit of jinja to personalize it for the user. Updated info.html to incorporate bootstrap. 
 ============================================================
 
 

@@ -41,7 +41,9 @@ P01 -- ArRESTed Development
       }
       .row.content {height:auto;} 
     }
-  </style>
+
+   </style>
+   
   <head>
     <title>Home</title>
   </head>
@@ -60,9 +62,9 @@ P01 -- ArRESTed Development
  <div class="container-fluid text-center" style = "background-color: #8ab2e2; ">    
   <div class="row content" >
     <div class="col-sm-2 sidenav" style = "background-color: #8ab2e2;">
-      <p><a href="google.com">Read About _____</a></p>
-      <p><a href="bing.com">Read About _____</a></p>
-      <p><a href="pchancs.com">Read About _____</a></p>
+      <p><a href="yes.com">Read About {{link_name1}}</a></p>
+      <p><a href="bing.com">Read About {{link_name2}}</a></p>
+      <p><a href="pchancs.com">Read About{{link_name3}}</a></p>
     </div>
     <div class="col-sm-8 text-left">
   
@@ -89,34 +91,35 @@ P01 -- ArRESTed Development
 
 <label for="zipcode">Please enter your age group</label>
 <br>
-
-<div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-warning btn-lg">
-        <input type="radio" name="age_group" id="student"> Student
-      </label>
-      <label class="btn btn-warning btn-lg">
-        <input type="radio" name="age_group" id="adult"> Adult
-      </label>
-</div>
- <hr>
-
- <label for="zipcode">Please indicate where you want to be</label>
-<br>
-<div class="btn-group" data-toggle="buttons">
-       <label class="btn btn-warning btn-lg">
-        <input type="radio" name="location" id="indoors">  Indoors
-      </label>
-      <label class="btn btn-warning btn-lg">
-        <input type="radio" name="location" id="outdoors"> Outdoors
-      </label>
-      
-</div>
-
-
-
-      
+<form>
+    <div class="radio">
+      <label><input type="radio" name="age">Student</label>
     </div>
-    <div class="col-sm-2 sidenav" style = "background-color: #8ab2e2;">
+    <div class="radio">
+      <label><input type="radio" name="age">Adult</label>
+    </div>
+</form>
+
+<hr>
+
+<label for="zipcode">Please select preferred location</label>
+<br>
+<form>
+    <div class="radio">
+      <label><input type="radio" name="location">Indoors</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="location">Outdoors</label>
+    </div>
+</form>
+
+<hr>
+
+<button type="button" class="btn btn-warning btn-lg">SUBMIT</button>
+
+    </div>
+
+ <div class="col-sm-2 sidenav" style = "background-color: #8ab2e2;">
       <div class="well">
         <p>Have you saved your API keys yet?</p>
       </div>
@@ -125,11 +128,17 @@ P01 -- ArRESTed Development
     </div>
   </div>
 </div>
-
-
+</div>
+ </div>
+ 
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
 
  
   </body>
 </html>
 
 
+
+  

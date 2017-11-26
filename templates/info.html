@@ -50,7 +50,8 @@
 </nav>
 
     
-  <div class="jumbotron">
+    <div class="jumbotron">
+      
   <div class="container text-center">
     <h2>The Weather</h2>
     <br>
@@ -59,9 +60,10 @@
     Desciption: {{period["fcttext"]}}
     <br><br>
     {% endfor %}
-    
+  </div>  
+<hr>
 
-    
+ <div class="container text-center">
    <h2>Book Recommendations</h2>
     <br>
     {% for book in bookdata["results"] %}

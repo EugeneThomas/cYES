@@ -7,31 +7,27 @@
 import urllib2
 import json
 
-# Global Variables
-book_key = ""
-events_key = ""
-weather_key = ""
+# use the following code to retrieve keys (specify as needed)
 
-def readingKeys(file):
-    print "Reading keys..."
-    with open(file,"r") as l:
-        book_key = l.readline().strip()
-        print book_key
-        events_key = l.readline().strip()
-        print events_key
-        weather_key = l.readline().strip()
-        print weather_key
-    return True
+with open("weatherapi.txt", "r") as w:
+    weather_key = w.readline().strip()
+    
+with open("eventapi.txt", "r") as :
+    book_key = e.readline().strip()
+    local_key = e.readline().strip()
+    tourist_key = e.readline().strip()
 
-readingKeys("testKeys.txt")
+# with open("keys.txt","r") as l:
+    
 
-# URLs
+#the following are bases for api call strings
+
 geo_url = "http://api.wunderground.com/api/" + weather_key + "/geolookup/q/"
 weather_url = "http://api.wunderground.com/api/" + weather_key + "/forecast/q/"
 book_url = "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json" \
            + "?api-key=" + book_key +"&age-group="
-events_url = ""
     
+
 def weathercall(zipcode):
     geoResp = urllib2.urlopen(geo_url + zipcode + ".json")
     gdata= geoResp.read()

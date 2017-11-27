@@ -1,10 +1,8 @@
-'''
-Team CYES
-Samantha Ngo, Carol Pan, Eugene Thomas, Yuyang Zhang
-SoftDev1 pd7
-P01 -- ArRESTed Development
-2017-11-16
-'''
+# Team CYES
+# Samantha Ngo, Carol Pan, Eugene Thomas, Yuyang Zhang
+# SoftDev1 pd7
+# P01 -- ArRESTed Development
+# 2017-11-16
 
 from flask import Flask, render_template, request
 from flask import redirect, flash, url_for
@@ -12,16 +10,15 @@ from util import api_calls as api
 
 app = Flask (__name__)
     
-    
 #home route, takes zipcode and other inputs
 @app.route("/")
 def hello_world():
+    api.readingKeys("keys.txt")
     print "**DIAG: has api key been acquired?**"
-    print "The weather api key is " + weather_key
-    print "The book api key is " + book_key
-    print "The eventbrite api key is " + local_key
-    print "The tripadvisor api key is " + tourist_key
-    return render_template("home.html")
+    print "The weather api key is " + api.weather_key
+    print "The book api key is " + api.book_key
+    print "The eventbrite api key is " + api.events_key
+    return render_template("base.html")
 
 #reach out to apis and acquire info
 @app.route("/info")

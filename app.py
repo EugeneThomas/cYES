@@ -9,7 +9,7 @@ from flask import redirect, flash, url_for
 from util import api_calls as api
 
 app = Flask (__name__)
-    
+
 #home route, takes zipcode and other inputs
 @app.route("/")
 def hello_world():
@@ -27,12 +27,11 @@ def display_info():
     zipcode=request.args["zip"]
     #code for api call have been moved to util/api_calls.py
     wform = api.weathercall(zipcode)
-
     #retrieving book data
     age=request.args["age"]
     #code for api call have been moved to util/api_calls.py
     bform = api.bookcall(age)
-    
+
     return render_template("info.html", bookdata=bform, weatherdata=wform)
 
 if __name__ == "__main__":

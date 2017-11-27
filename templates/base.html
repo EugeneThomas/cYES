@@ -5,6 +5,7 @@ SoftDev1 pd7
 P01 -- ArRESTed Development
 2017-11-16
 -->
+
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -49,79 +50,42 @@ P01 -- ArRESTed Development
   </head>
   
   <body>
-<nav class="navbar navbar-inverse" style = "background-color: #8ab2e2;">
+<nav class="navbar navbar-inverse" style = "background-color: #009933;border-style:none">
   <div class="container-fluid">
     <div class="navbar-header ">
-	<h1 style = "color: #f7af07">Cloudy With a Chance of Skeeballs</h1>
+	<h1 style = "color:#c6ebc6 ">Cloudy With a Chance of Skeeballs</h1>
     </div>
   </div>
 </nav>
 
 
 
- <div class="container-fluid text-center" style = "background-color: #8ab2e2; ">    
+ <div class="container-fluid text-center" style = "background-color: #a1dea1; ">    
   <div class="row content" >
-    <div class="col-sm-2 sidenav" style = "background-color: #8ab2e2;">
-      <p><a href="yes.com">Read About {{link_name1}}</a></p>
-      <p><a href="bing.com">Read About {{link_name2}}</a></p>
-      <p><a href="pchancs.com">Read About{{link_name3}}</a></p>
+    <div class="col-sm-2 sidenav" style = "background-color: #a1dea1;">
+      <p><a href="/">Homepage {{link_name1}}</a></p>
+      <p><a href="https://www.nytimes.com/books/best-sellers/?_r=0">Trending Books {{link_name2}}</a></p>
+      <p><a href="fandango.com">Movies in Theaters{{link_name3}}</a></p>
     </div>
     <div class="col-sm-8 text-left">
   
- 
-
-<form action = "/info">
-  <div class="form-group">
-    <label for="name">Please enter your name</label>
-    <input type="name" class="form-control" id="name" style = "width: 50%; background-color: #bad2ef" placeholder = "Name">
-  </div>
-
-<hr>
-
-  <div class="form-group">
-    <label for="zipcode">Please enter your zipcode</label>
-    <input type="zipcode" class="form-control" id="zipcode" style = "width: 50%; background-color: #bad2ef" placeholder = "Zipcode">
-  </div>
-  
-<hr>
-
-<label for="zipcode">Please enter your age group</label>
-<br>
-
-    <div class="radio">
-      <label><input type="radio" name="age">Student</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="age">Adult</label>
-    </div>
-
-
-<hr>
-
-<label for="zipcode">Please select preferred location</label>
-<br>
-
-    <div class="radio">
-      <label><input type="radio" name="location">Indoors</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="location">Outdoors</label>
-    </div>
-
-
-<hr>
-
-<button type="button" class="btn btn-warning btn-lg">SUBMIT</button>
-</form>
+      <form action = "/info">
+	<br><br>
+	<div class="form-group">
+	  <label for="zipcode">Enter your zip code:</label>
+	  <input type="zipcode" class="form-control" id="zipcode" style = "width: 50%; background-color: #ffffff" placeholder = "Zip Code"> <br>
+	  <button type="button" class="btn btn-warning btn-lg"  style="background-color:#2e842e;border-color:#2e842e">Let's go!</button>
+	</div>
+      </form>
 
     </div>
 
- <div class="col-sm-2 sidenav" style = "background-color: #8ab2e2;">
-      <div class="well">
+ <div class="col-sm-2 sidenav" style = "background-color: #a1dea1;">
+      <div class="well" style="background-color:#ffffff">
         <p>Have you saved your API keys yet?</p>
       </div>
 
-      <a href="google.com" class="btn btn-warning" role="button">Click here</a>
+      <a href="https://github.com/EugeneThomas/cYES/blob/master/README.md" class="btn btn-warning" role="button" style="background-color:#2e842e;border-color:#2e842e">Show Me!</a>
     </div>
   </div>
 </div>

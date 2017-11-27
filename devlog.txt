@@ -1,4 +1,4 @@
-Team CYES
+﻿Team CYES
 Samantha Ngo, Carol Pan, Eugene Thomas, Yuyang Zhang
 SoftDev1 pd7
 P01 -- ArRESTed Development
@@ -90,6 +90,10 @@ Updated radio buttons and forms in base.html to be under one submit button. Inco
 
 zhangY —- 2017-11-26 22:10 
 Added an error page to catch errors when user passes their quota for API keys. 
+
+ngoS —- 2017-11-26 22:40 
+Got working version up and running; updated api_calls.py to match new API keys arrangement; fixing up bootstrap.
+
 ============================================================
 
 

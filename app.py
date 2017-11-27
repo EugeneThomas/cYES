@@ -13,11 +13,9 @@ app = Flask (__name__)
 #home route, takes zipcode and other inputs
 @app.route("/")
 def hello_world():
-    api.readingKeys("keys.txt")
     print "**DIAG: has api key been acquired?**"
-    print "The weather api key is " + api.weather_key
-    print "The book api key is " + api.book_key
-    print "The eventbrite api key is " + api.events_key
+
+    '''will figure out how to display keys at later date'''
     return render_template("base.html")
 
 #reach out to apis and acquire info

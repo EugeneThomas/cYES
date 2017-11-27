@@ -8,29 +8,29 @@ import urllib2
 import json
 
 # Global Variables
-book_key = ""
-events_key = ""
-weather_key = ""
+global book_key
+global events_key
+global weather_key
+global geo_url
+global weather_url
+global book_url
+global event_surl
 
-def readingKeys(file):
-    print "Reading keys..."
-    with open(file,"r") as l:
-        book_key = l.readline().strip()
-        print book_key
-        events_key = l.readline().strip()
-        print events_key
-        weather_key = l.readline().strip()
-        print weather_key
-    return True
+print "Reading keys..."
+with open("keys.txt","r") as l:
+    book_key = l.readline().strip()
+    print book_key
+    events_key = l.readline().strip()
+    print events_key
+    weather_key = l.readline().strip()
+    print weather_key
+    #URLS
+    geo_url = "http://api.wunderground.com/api/" + weather_key + "/geolookup/q/"
+    weather_url = "http://api.wunderground.com/api/" + weather_key + "/forecast/q/"
+    book_url = "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json" \
+               + "?api-key=" + book_key +"&age-group="
+    events_url = ""
 
-readingKeys("testKeys.txt")
-
-# URLs
-geo_url = "http://api.wunderground.com/api/" + weather_key + "/geolookup/q/"
-weather_url = "http://api.wunderground.com/api/" + weather_key + "/forecast/q/"
-book_url = "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json" \
-           + "?api-key=" + book_key +"&age-group="
-events_url = ""
     
 def weathercall(zipcode):
     geoResp = urllib2.urlopen(geo_url + zipcode + ".json")

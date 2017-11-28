@@ -14,10 +14,13 @@ global weather_key
 global geo_url
 global weather_url
 global book_url
-global event_surl
+global events_url
+
+# Variable to hold latest forecast for analysis
+global retreivedForecast
 
 print "Reading keys..."
-with open("keys.txt","r") as l:
+with open("../keys.txt","r") as l:
     book_key = l.readline().strip()
     print book_key
     events_key = l.readline().strip()
@@ -33,11 +36,12 @@ with open("keys.txt","r") as l:
 
 
 def weathercall(zipcode):
-    geoResp = urllib2.urlopen(weather_url + zipcode + ".json")
+    geoResp = urllib2.urlopen(weather_url + str(zipcode) + ".json")
     gdata= geoResp.read()
     gform= json.loads(gdata)
     forecasts = gform["forecast"]["txt_forecast"]["forecastday"]
     print forecasts
+    retrievedForecast = forecasts
     return forecasts
 
 
@@ -48,3 +52,11 @@ def bookcall(age):
     bdata= bookResp.read()
     bform= json.loads(bdata)
     return bform
+
+def getTemp():
+    print "RETREIVED FORECAST: ", retrievedForecast
+    return True
+
+# Testing
+weathercall(11229)
+getTemp()

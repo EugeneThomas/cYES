@@ -101,6 +101,10 @@ Working together, we were able to finally create a page that takes in an age and
 thomasE -- 2017-11-28 02:22
 In a late night coding session, the Project Manager helped tie up some loose ends in the code and is now ready to get some sleep.
 
+ngoS, panC, thomasE, zhangY -- 2017-11-28 13:17
+In the last class meeting before the project is due, our group reunited in order to work on the error handling for the issues that we currently have. For tonight, we will all be coding diligently in order to manage any error handling possible. Also, we must
+know how to handle the EventBrite API by the end of the night. This will be a journey, but we will overcome it.
+
 ============================================================
 
 

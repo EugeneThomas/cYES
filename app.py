@@ -8,7 +8,9 @@ from flask import Flask, render_template, request
 from flask import session, redirect, flash, url_for
 from util import api_calls as api
 import os
+import datetime
 
+now = datetime.datetime.now()
 app = Flask (__name__)
 app.secret_key = os.urandom(32)
 
@@ -48,6 +50,9 @@ def event_page():
     temperature = forecast[1]
     windspeed = forecast[2]
     zipcode = session["zipcode"]
+    year = now.year
+    month = now.month
+    day = now.day + (period-1)/2
     
     return render_template("events.html", name=session["name"])
 

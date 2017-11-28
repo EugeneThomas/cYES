@@ -43,6 +43,10 @@ P01 -- ArRESTed Development
       .row.content {height:auto;}
     }
 
+    h1{
+    font-style: italic;
+    font-famiy: 'URW Chancery L',cursive;
+    }
    </style>
 
   <head>
@@ -50,47 +54,51 @@ P01 -- ArRESTed Development
   </head>
 
   <body>
-<nav class="navbar navbar-inverse" style = "background-color: #009933;border-style:none">
+<nav class="navbar navbar-inverse" style = "background-color: #C0B283;border-style:none">
   <div class="container-fluid">
     <div class="navbar-header ">
-	<h1 style = "color:#c6ebc6 ">Cloudy With a Chance of Skeeballs</h1>
+	<h1 style = "color:#F4F4F4 ">Cloudy With a Chance of Skeeballs</h1>
     </div>
   </div>
 </nav>
 
 
 
- <div class="container-fluid text-center" style = "background-color: #a1dea1; ">
+ <div class="container-fluid text-center" style = "background-color: #DCD0C0; ">
   <div class="row content" >
-    <div class="col-sm-2 sidenav" style = "background-color: #a1dea1;">
-      <p><a href="/">Homepage {{link_name1}}</a></p>
-      <p><a href="https://www.nytimes.com/books/best-sellers/?_r=0">Trending Books {{link_name2}}</a></p>
-      <p><a href="https://www.fandango.com/moviesintheaters">Movies in Theaters{{link_name3}}</a></p>
+    <div class="col-sm-2 sidenav" style = "background-color: #DCD0C0;">
+
+      <a href="https://www.nytimes.com/books/best-sellers/?_r=0" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Trending Books</a>
+      <br>
+      <br>
+      <a href="https://www.fandango.com/moviesintheaters" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Movies in Theaters</a>
     </div>
     <div class="col-sm-8 text-left">
-
+<br>
       <form action="/info">
-	Zipcode: <input type='text' name="zip">
+	<label>Zipcode:</label>
+	  <input type="text" class="form-control" id="zipcode" placeholder="Enter zipecode" name="zipcode">
 	<br>
-	Age: <input type='text' name="age">
+	<label>Age:</label>
+	<input type="text" class="form-control" id="age" placeholder="Enter age" name="age">
 	<br>
-	<input type='submit'>
+	<input type="submit" class="btn btn-info" value="Submit Button" style="background-color:#C0B283;border-color:#373737">
 
     </div>
 
- <div class="col-sm-2 sidenav" style = "background-color: #a1dea1;">
+ <div class="col-sm-2 sidenav" style = "background-color: #DCD0C0;">
       <div class="well" style="background-color:#ffffff">
         <p>Have you saved your API keys yet?</p>
       </div>
 
-      <a href="https://github.com/EugeneThomas/cYES/blob/master/README.md" class="btn btn-warning" role="button" style="background-color:#2e842e;border-color:#2e842e">Show Me!</a>
+      <a href="https://github.com/EugeneThomas/cYES/blob/master/README.md" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Show Me!</a>
     </div>
   </div>
 </div>
 </div>
  </div>
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center" style = "background-color: #C0B283;border-style:none">
   <p>cYES</p>
 </footer>
 

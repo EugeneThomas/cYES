@@ -96,7 +96,10 @@ Got working version up and running; updated api_calls.py to match new API keys a
 
 panC, thomasE, zhangY -- 2017-11-27 13:13
 In the wake of the absence of NGO, the remainder of the group worked to tie up any loose ends that plagued the "finished" version of our project that we had ready for class today.
-Working together, we were able to finally create a page that takes in an age and a zip code and sends back book reviews, and the weather in that area. For the next two days, we will extend the site to the EventBrite API and robust our code with comments. 
+Working together, we were able to finally create a page that takes in an age and a zip code and sends back book reviews, and the weather in that area. For the next two days, we will extend the site to the EventBrite API and robust our code with comments.
+
+thomasE -- 2017-11-28 02:22
+In a late night coding session, the Project Manager helped tie up some loose ends in the code and is now ready to get some sleep.
 
 ============================================================
 

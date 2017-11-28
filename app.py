@@ -21,8 +21,10 @@ def hello_world():
 #reach out to apis and acquire info
 @app.route("/info")
 def display_info():
+    #retrieving the name
+    name=request.args["name"]
     #retrieving weather data
-    zipcode=request.args["zip"]
+    zipcode=request.args["zipcode"]
     #code for api call have been moved to util/api_calls.py
     wform = api.weathercall(zipcode)
     #retrieving book data
@@ -30,7 +32,7 @@ def display_info():
     #code for api call have been moved to util/api_calls.py
     bform = api.bookcall(age)
 
-    return render_template("info.html", bookdata=bform, weatherdata=wform)
+    return render_template("info.html", name=name, bookdata=bform, weatherdata=wform)
 
 if __name__ == "__main__":
     app.debug = True

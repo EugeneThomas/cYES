@@ -31,18 +31,15 @@ with open("keys.txt","r") as l:
                + "?api-key=" + book_key +"&age-group="
     events_url = ""
 
-    
+
 def weathercall(zipcode):
-    geoResp = urllib2.urlopen(geo_url + zipcode + ".json")
+    geoResp = urllib2.urlopen(weather_url + zipcode + ".json")
     gdata= geoResp.read()
     gform= json.loads(gdata)
-    location= gform["location"]["requesturl"]
-    location= location.replace("html", "json")
-    print "retrieving data from " + weather_url + location
-    weatherResp = urllib2.urlopen(weather_url + location)
-    wdata = weatherResp.read()
-    wform= json.loads(wdata)
-    return wform
+    forecasts = gform["forecast"]["txt_forecast"]["forecastday"]
+    print forecasts
+    return forecasts
+
 
 def bookcall(age):
     print "retrieving data from " + book_url + age

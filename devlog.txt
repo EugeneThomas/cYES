@@ -124,3 +124,4 @@ MID-DEVELOPMENT DESIGN CHANGES
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+panC -- Please start asking what the code does before deleting. And I also have to work on commenting.

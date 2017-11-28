@@ -36,10 +36,11 @@ def weathercall(zipcode):
     geoResp = urllib2.urlopen(geo_url + zipcode + ".json")
     gdata= geoResp.read()
     gform= json.loads(gdata)
-    print "retrieving data from " + geo_url + zipcode
+    print "retrieving data from " + geo_url + zipcode +".json"
     #change zip code to appropriate city and state
     location= gform["location"]["requesturl"]
     location= location.replace("html", "json")
+    #now actually getting the weather
     print "retrieving data from " + weather_url  + location
     weatherResp = urllib2.urlopen(weather_url + location)
     wdata = weatherResp.read()
@@ -47,6 +48,17 @@ def weathercall(zipcode):
     forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
     return forecasts
 
+def getweather(data, period):
+    forecast = data[period]["fcttext"].split(".")
+    temp = ""
+    for char in forecast[1]:
+        if char.isdigit():
+            temp += char
+    forecast[1] = int(temp)
+    forecast[2]=forecast[2].lstrip()
+    for item in forecast:
+        print item
+    return forecast
 
 def bookcall(age):
     print "retrieving data from " + book_url + age

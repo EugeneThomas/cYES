@@ -5,10 +5,14 @@
 # 2017-11-16
 
 from flask import Flask, render_template, request
-from flask import redirect, flash, url_for
+from flask import session, redirect, flash, url_for
 from util import api_calls as api
+import os
 
 app = Flask (__name__)
+app.secret_key = os.urandom(32)
+
+
 
 #home route, takes zipcode and other inputs
 @app.route("/")
@@ -22,17 +26,31 @@ def hello_world():
 @app.route("/info")
 def display_info():
     #retrieving the name
-    name=request.args["name"]
+    session["name"]=request.args["name"]
     #retrieving weather data
-    zipcode=request.args["zipcode"]
+    session["zipcode"]=request.args["zipcode"]
     #code for api call have been moved to util/api_calls.py
-    wform = api.weathercall(zipcode)
+    session["wform"]= api.weathercall(session["zipcode"])
     #retrieving book data
     age=request.args["age"]
     #code for api call have been moved to util/api_calls.py
     bform = api.bookcall(age)
 
-    return render_template("info.html", name=name, bookdata=bform, weatherdata=wform)
+    return render_template("info.html", name=session["name"], bookdata=bform, weatherdata=session["wform"])
+
+@app.route("/events")
+def event_page():
+    period = int(request.args["period"])    
+    forecast = api.getweather(session["wform"], period)
+
+    #IMPORTANT STUFF HERE::::
+    description = forecast[0]
+    temperature = forecast[1]
+    windspeed = forecast[2]
+    zipcode = session["zipcode"]
+    
+    return render_template("events.html", name=session["name"])
+
 
 if __name__ == "__main__":
     app.debug = True

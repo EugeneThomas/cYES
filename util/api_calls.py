@@ -19,7 +19,7 @@ global events_url
 '''
 
 # Variable to hold latest forecast for analysis
-global currentForecast
+# global currentForecast
 
 # Setup: read in keys and set urls
 def readingKeys(file):
@@ -30,6 +30,7 @@ def readingKeys(file):
     global weather_url
     global book_url
     global events_url
+    global currentForecast
     
     print "Reading keys..."
     with open(file,"r") as l:
@@ -52,17 +53,23 @@ def weathercall(zipcode):
     gdata= geoResp.read()
     gform= json.loads(gdata)
     print "retrieving data from " + geo_url + str(zipcode) +".json"
-    #change zip code to appropriate city and state
-    location= gform["location"]["requesturl"]
-    location= location.replace("html", "json")
-    #now actually getting the weather
-    print "retrieving data from " + weather_url  + location
-    weatherResp = urllib2.urlopen(weather_url + location)
-    wdata = weatherResp.read()
-    wform= json.loads(wdata)
-    forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
-    currentForecast = forecasts
-    return (True, forecasts)
+    try:
+        #change zip code to appropriate city and state
+        location= gform["location"]["requesturl"]
+        location= location.replace("html", "json")
+        #now actually getting the weather
+        print "retrieving data from " + weather_url  + location
+        weatherResp = urllib2.urlopen(weather_url + location)
+        wdata = weatherResp.read()
+        wform= json.loads(wdata)
+        forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
+        currentForecast = forecasts
+        return (True, forecasts)
+    except:
+        print "Could not find location"
+        currentForeCast = "Could not find location"
+        return (False,)
+        
     '''
     try:
         geoResp = urllib2.urlopen(geo_url + str(zipcode) + ".json")
@@ -115,13 +122,8 @@ def bookcall(age):
     except:
         return (False,)
 
-def getTemp():
-    print "RETREIVED FORECAST: ", currentForecast
-    return True
-
 # Testing
 print readingKeys("testKeys.txt")
 print geo_url
 print weather_url
 weathercall(11229)
-getTemp()

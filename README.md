@@ -41,3 +41,6 @@
 #### 2. `cd` into the root directory of the repo
 #### 3. Run the following command: `python app.py`
 #### 4. The web app should now be available in your browser at `localhost:5000/`
+
+### Some bugs to be aware of:
+1. Sometimes, in the header, your name may not appear, even though it says Hello!

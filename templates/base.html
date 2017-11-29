@@ -51,13 +51,16 @@ P01 -- ArRESTed Development
     <div class="col-sm-8 text-left">
 <br>
       <form action="/info">
-  <label>Name:</label>
+	<label>Name:</label>
+	<p>{{flash_name}}</p>
       <input type="text" class="form-control" id="name" placeholder="Enter name..." name="name">
   <br>
-	<label>Zipcode:</label>
+  <label>Zipcode:</label>
+  	<p>{{flash_zip}}</p>
 	  <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode..." name="zipcode">
 	<br>
 	<label>Age:</label>
+		<p>{{flash_age}}</p>
 	<input type="text" class="form-control" id="age" placeholder="Enter age..." name="age">
 	<br>
 	<center> <input type="submit" class="btn btn-info" value="Search!" style="background-color:#ffa260;border-color:#ff7200"> </center>

@@ -112,6 +112,12 @@ Set up event page, acquired month, day, year, zipcode, and temperature in prepar
 
 zhangY —- 2017-11-28 22:08
 Added bootstrap to both books.html and events.html. Changed color scheme once again to incorporate a more colorful theme. Added gradient for a better color contrast. Updated error page to facilitate possible errors during running.
+
+ngoS -- 2017-11-28 23:45
+Fixed bugs on weather added try-except blocks.
+
+ngoS -- 2017-11-29-05:45
+Added events API and able to display five events if temperature is greater than certain temperature.
 ============================================================
 
 
@@ -119,15 +125,22 @@ Added bootstrap to both books.html and events.html. Changed color scheme once ag
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Accounts -> ultimately decided not to do them
+- Weather API not finding location -> use zipcode only
+- Events -> no way to show trending events -- used a search query to find "outdoor" events
+- too many things returned -> used filters
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- How to use APIs!
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Got rid of accounts
+- decided not to use movie API
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

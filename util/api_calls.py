@@ -8,6 +8,7 @@ import urllib2
 import json
 
 # Global Variables
+'''
 global book_key
 global events_key
 global weather_key
@@ -15,12 +16,21 @@ global geo_url
 global weather_url
 global book_url
 global events_url
+'''
 
 # Variable to hold latest forecast for analysis
 global currentForecast
 
 # Setup: read in keys and set urls
 def readingKeys(file):
+    global book_key
+    global events_key
+    global weather_key
+    global geo_url
+    global weather_url
+    global book_url
+    global events_url
+    
     print "Reading keys..."
     with open(file,"r") as l:
         book_key = l.readline().strip()

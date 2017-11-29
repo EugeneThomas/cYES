@@ -11,14 +11,22 @@ P01 -- ArRESTed Development
 
 <html>
   <style>
-    #grad1 {
-    background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(red, yellow); /* Standard syntax (must be last) */
+    #grad {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, red , yellow); /* Standard syntax */
     }
-    </style>
+
+    #grad1 {
+  background: yellow; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, yellow , red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, yellow, red); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, yellow, red); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, yellow , red); /* Standard syntax */
+}
+     </style>
 
   <head>
     <title>Home</title>
@@ -28,7 +36,7 @@ P01 -- ArRESTed Development
   <body>
     
     <nav class="navbar navbar-inverse" style = "border-style:none">
-    <div id="grad1">
+    <div id="grad">
   <div class="container-fluid">  
     <div class="navbar-header ">
 	<h1 style = "color:#F4F4F4">Cloudy With a Chance of Skeeballs</h1>
@@ -37,15 +45,16 @@ P01 -- ArRESTed Development
     </div>
 </nav>
 
+    
 
-
- <div class="container-fluid text-center" style = "background-color: #DCD0C0; ">
-  <div class="row content" >
-    <div class="col-sm-2 sidenav" style = "background-color: #DCD0C0;">
+ <div class="container-fluid text-center" style = "background-color: #ffb5bc; ">
+   <div class="row content" >
+     
+    <div class="col-sm-2 sidenav" style = "background-color: #ffb5bc;">
       <br>
-      <a href="https://www.nytimes.com/books/best-sellers/?_r=0" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Trending Books</a>
+      <a href="https://www.nytimes.com/books/best-sellers/?_r=0" class="btn btn-warning" role="button" style="background-color:#ffa260;border-color:#ff7200">Trending Books</a>
       <br> <br> <br>
-      <a href="https://www.fandango.com/moviesintheaters" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Movies in Theaters</a>
+      <a href="https://www.fandango.com/moviesintheaters" class="btn btn-warning" role="button" style="background-color:#ffa260;border-color:#ff7200">Movies in Theaters</a>
     </div>
     <div class="col-sm-8 text-left">
 <br>
@@ -59,23 +68,23 @@ P01 -- ArRESTed Development
 	<label>Age:</label>
 	<input type="text" class="form-control" id="age" placeholder="Enter age..." name="age">
 	<br>
-	<center> <input type="submit" class="btn btn-info" value="Search!" style="background-color:#C0B283;border-color:#373737"> </center>
+	<center> <input type="submit" class="btn btn-info" value="Search!" style="background-color:#ffa260;border-color:#ff7200"> </center>
 
     </div>
 
- <div class="col-sm-2 sidenav" style = "background-color: #DCD0C0;">
+ <div class="col-sm-2 sidenav" style = "background-color: #ffb5bc;">
       <div class="well" style="background-color:#ffffff">
         <p>Have you saved your API keys yet?</p>
       </div>
 
-      <a href="https://github.com/EugeneThomas/cYES/blob/master/README.md" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Show Me!</a>
+      <a href="https://github.com/EugeneThomas/cYES/blob/master/README.md" class="btn btn-warning" role="button" style="background-color:#ffa260;border-color:#ff7200">Show Me!</a>
     </div>
   </div>
 </div>
 </div>
  </div>
 
-<footer class="container-fluid text-center" style = "background-color: #C0B283;border-style:none">
+<footer class="container-fluid text-center" style = "background-color: #ffa260;border-style:none">
   <p>cYES</p>
 </footer>
 

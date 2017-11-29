@@ -34,11 +34,9 @@ def display_info():
     #code for api call have been moved to util/api_calls.py
     session["wform"]= api.weathercall(session["zipcode"])
     #retrieving book data
-    age=request.args["age"]
-    #code for api call have been moved to util/api_calls.py
-    bform = api.bookcall(age)
+    session["age"]=request.args["age"]
 
-    return render_template("info.html", name=session["name"], bookdata=bform, weatherdata=session["wform"])
+    return render_template("info.html", name=session["name"], weatherdata=session["wform"])
 
 @app.route("/events")
 def event_page():
@@ -47,7 +45,7 @@ def event_page():
 
     #IMPORTANT STUFF HERE::::
     description = forecast[0]
-    temperature = forecast[1]
+    temperature = forecast[1] #fahrenheit
     windspeed = forecast[2]
     zipcode = session["zipcode"]
     year = now.year
@@ -56,6 +54,10 @@ def event_page():
     if day > 30:
         day -= 30
         month += 1
+    if temperature < 30: #too cold, go read a book
+        #code for api call have been moved to util/api_calls.py
+        bform = api.bookcall(age)
+        return render_template("books.html", name=session["name"], bookdata=bform)
     
     return render_template("events.html", name=session["name"])
 

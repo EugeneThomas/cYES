@@ -36,40 +36,53 @@ with open("../keys.txt","r") as l:
 
 
 def weathercall(zipcode):
-    '''
-    geoResp = urllib2.urlopen(weather_url + str(zipcode) + ".json")
-    gdata= geoResp.read()
-    gform= json.loads(gdata)
-    forecasts = gform["forecast"]["txt_forecast"]["forecastday"]
-    print forecasts
-    retrievedForecast = forecasts
-    '''
-    geoResp = urllib2.urlopen(geo_url + zipcode + ".json")
-    gdata= geoResp.read()
-    gform= json.loads(gdata)
-    print "retrieving data from " + geo_url + zipcode
-    #change zip code to appropriate city and state
-    location= gform["location"]["requesturl"]
-    location= location.replace("html", "json")
-    print "retrieving data from " + weather_url  + location
-    weatherResp = urllib2.urlopen(weather_url + location)
-    wdata = weatherResp.read()
-    wform= json.loads(wdata)
-    forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
-    return forecasts
+    try:
+        geoResp = urllib2.urlopen(geo_url + zipcode + ".json")
+        gdata= geoResp.read()
+        gform= json.loads(gdata)
+        print "retrieving data from " + geo_url + zipcode +".json"
+        #change zip code to appropriate city and state
+        location= gform["location"]["requesturl"]
+        location= location.replace("html", "json")
+        #now actually getting the weather
+        print "retrieving data from " + weather_url  + location
+        weatherResp = urllib2.urlopen(weather_url + location)
+        wdata = weatherResp.read()
+        wform= json.loads(wdata)
+        forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
+        return (True, forecasts)
+    except:
+        return (False,)
 
+def getweather(data, period):
+    try:
+        forecast = data[period]["fcttext"].split(".")
+        temp = ""
+        for char in forecast[1]:
+            if char.isdigit():
+                temp += char
+                forecast[1] = int(temp)
+        forecast[2]=forecast[2].lstrip()
+        for item in forecast:
+            print item
+        return (True, forecast)
+    except:
+        return (False,)
 
 def bookcall(age):
-    print "retrieving data from " + book_url + age
-    bookResp = urllib2.urlopen(book_url + age)
-    burl= bookResp.geturl()
-    bdata= bookResp.read()
-    bform= json.loads(bdata)
-    if bform["num_results"] == 0:
-        bookResp= urllib2.urlopen(book_url)
+    try:
+        print "retrieving data from " + book_url + age
+        bookResp = urllib2.urlopen(book_url + age)
+        burl= bookResp.geturl()
         bdata= bookResp.read()
         bform= json.loads(bdata)
-    return bform
+        if bform["num_results"] == 0:
+            bookResp= urllib2.urlopen(book_url)
+            bdata= bookResp.read()
+            bform= json.loads(bdata)
+        return (True, bform)
+    except:
+        return (False,)
 
 def getTemp():
     print "RETREIVED FORECAST: ", retrievedForecast

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <html>
-   
+  
    <style>
     #grad {
   background: red; /* For browsers that do not support gradients */
@@ -13,7 +13,7 @@
      </style>
 
   <head>
-    <title>Info</title>
+    <title>Books</title>
     <link rel="stylesheet" type="text/css" href="static/edge.css"> 
   </head>
 
@@ -29,36 +29,29 @@
     </div>
     </div>
 </nav>
-
-    <div class="jumbotron" style = "background-color: #fce17e">
-
-  <div class="container text-center" >
-    <h1>Today's Weather</h1>
-    <hr>
+    
+    
+    <div class="jumbotron" style = "background-color: #fce17e"> 
+      
+      <div class="container text-center">
+	<h1>Book Recommendations</h1>
+	<hr>
+	<h2> Brr! It's freezing out there!! </h2>
     <br>
-    <font size=5>
-    <b>{{weatherdata[0]["title"]}} <br>
-    Desciption: {{weatherdata[0]["fcttext"]}} <a href='events?period=0'>Check Events</a><br><br>
-    {{weatherdata[1]["title"]}}<br>
-    Desciption: {{weatherdata[1]["fcttext"]}} <a href='events?period=1'>Check Events</a></b><br><br>
-    </font>
-    <hr>
-    <h2>The Three-Day Forecast</h2>
+    {% for book in bookdata["results"] %}
+    <b>{{book["title"]}}</b> {{book["contributor"]}}
     <br>
-    {% for period in weatherdata %}
-    {% if period["period"] > 1 %}
-    <b>{{period["title"]}}</b> <br>
-    Desciption: {{period["fcttext"]}} <a href='events?period={{period["period"]}}'>Check Events</a>
+    <i>{{book["description"]}}</i>
     <br><br>
-    {% endif %}
     {% endfor %}
-  </div>
-  <center>
+
+      </div>
+        <center>
     <a href="/" class="btn btn-warning btn-lg" role="button" style="background-color:#ffa260;border-color:#ff7200">Return Home</a>
     </center>
-  </div>
+</div>
 
-  <footer class="container-fluid text-center" style = "background-color: #ffa260;border-style:none">
+<footer class="container-fluid text-center" style = "background-color: #ffa260;border-style:none">
   <p>cYES</p>
   </footer>
  

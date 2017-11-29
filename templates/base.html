@@ -10,97 +10,73 @@ P01 -- ArRESTed Development
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <html>
-   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;}
-    }
-
-    h1{
-    font-style: italic;
-    font-famiy: 'URW Chancery L',cursive;
-    }
-   </style>
+  <style>
+    #grad {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, red , yellow); /* Standard syntax */
+}
+     </style>
 
   <head>
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="static/edge.css"> 
   </head>
 
   <body>
-<nav class="navbar navbar-inverse" style = "background-color: #C0B283;border-style:none">
-  <div class="container-fluid">
+    
+    <nav class="navbar navbar-inverse" style = "border-style:none">
+    <div id="grad">
+  <div class="container-fluid">  
     <div class="navbar-header ">
 	<h1 style = "color:#F4F4F4">Cloudy With a Chance of Skeeballs</h1>
     </div>
-  </div>
+    </div>
+    </div>
 </nav>
 
+    
 
-
- <div class="container-fluid text-center" style = "background-color: #DCD0C0; ">
-  <div class="row content" >
-    <div class="col-sm-2 sidenav" style = "background-color: #DCD0C0;">
+ <div class="container-fluid text-center" style = "background-color: #ffb5bc; ">
+   <div class="row content" >
+     
+    <div class="col-sm-2 sidenav" style = "background-color: #ffb5bc;">
       <br>
-      <a href="https://www.nytimes.com/books/best-sellers/?_r=0" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Trending Books</a>
+      <a href="https://www.nytimes.com/books/best-sellers/?_r=0" class="btn btn-warning" role="button" style="background-color:#ffa260;border-color:#ff7200">Trending Books</a>
       <br> <br> <br>
-      <a href="https://www.fandango.com/moviesintheaters" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Movies in Theaters</a>
+      <a href="https://www.fandango.com/moviesintheaters" class="btn btn-warning" role="button" style="background-color:#ffa260;border-color:#ff7200">Movies in Theaters</a>
     </div>
     <div class="col-sm-8 text-left">
-<br>
+      <br>
       <form action="/info">
-  <label>Name:</label>
+	<label>Name:</label>
       <input type="text" class="form-control" id="name" placeholder="Enter name..." name="name">
   <br>
-	<label>Zipcode:</label>
+  <label>Zipcode:</label> 
 	  <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode..." name="zipcode">
 	<br>
 	<label>Age:</label>
 	<input type="text" class="form-control" id="age" placeholder="Enter age..." name="age">
 	<br>
-	<center> <input type="submit" class="btn btn-info" value="Search!" style="background-color:#C0B283;border-color:#373737"> </center>
+	<center> <input type="submit" class="btn btn-info" value="Search!" style="background-color:#ffa260;border-color:#ff7200"> </center>
 
     </div>
 
- <div class="col-sm-2 sidenav" style = "background-color: #DCD0C0;">
+ <div class="col-sm-2 sidenav" style = "background-color: #ffb5bc;">
       <div class="well" style="background-color:#ffffff">
         <p>Have you saved your API keys yet?</p>
       </div>
 
-      <a href="https://github.com/EugeneThomas/cYES/blob/master/README.md" class="btn btn-warning" role="button" style="background-color:#C0B283;border-color:#373737">Show Me!</a>
+      <a href="https://github.com/EugeneThomas/cYES/blob/master/README.md" class="btn btn-warning" role="button" style="background-color:#ffa260;border-color:#ff7200">Show Me!</a>
     </div>
   </div>
 </div>
 </div>
  </div>
 
-<footer class="container-fluid text-center" style = "background-color: #C0B283;border-style:none">
+<footer class="container-fluid text-center" style = "background-color: #ffa260;border-style:none">
   <p>cYES</p>
 </footer>
 

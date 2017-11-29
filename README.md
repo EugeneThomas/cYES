@@ -1,5 +1,5 @@
 # Cloudy with a Chance of Skeeball
-## Team cYES: carol Pan, Yuyang Zhang, Eugene Thomas, and Samantha Ngo
+## Team cYES: Carol Pan, Yuyang Zhang, Eugene Thomas, and Samantha Ngo
 
 ### Our app makes suggestions for activities to do today based on the weather patterns. It provides daily weather updates and based on the weather forecast, we suggest activities such as current movies in theaters, treanding books, and local events.
 

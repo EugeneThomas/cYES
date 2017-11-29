@@ -50,10 +50,6 @@ P01 -- ArRESTed Development
     </div>
     <div class="col-sm-8 text-left">
       <br>
-      {% set msgs = get_flashed_messages() %}
-	{% for message in msgs %}
-		Message: {{message}}
-	{% endfor %}
       <form action="/info">
 	<label>Name:</label>
       <input type="text" class="form-control" id="name" placeholder="Enter name..." name="name">

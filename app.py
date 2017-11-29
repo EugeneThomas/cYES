@@ -53,6 +53,9 @@ def event_page():
     year = now.year
     month = now.month
     day = now.day + (period-1)/2
+    if day > 30:
+        day -= 30
+        month += 1
     
     return render_template("events.html", name=session["name"])
 

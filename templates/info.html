@@ -2,34 +2,46 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <html>
    
+   <style>
+    #grad {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, red , yellow); /* Standard syntax */
+}
+     </style>
+
   <head>
-    <title>Weather</title>
-    <link rel="stylesheet" type="text/css" href="static/edge.css">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="static/edge.css"> 
   </head>
 
-
   <body>
-    <nav class="navbar navbar-inverse" style = "background-color: #C0B283;border-style:none">
-  <div class="container-fluid">
+    
+    <nav class="navbar navbar-inverse" style = "border-style:none">
+    <div id="grad">
+  <div class="container-fluid">  
     <div class="navbar-header ">
-      <h1 style = "color: #F4F4F4">Cloudy With a Chance of Skeeballs</h1>
-      <h2 style = "color: #F4F4F4">Hello {{name}}</h2>
+	<h1 style = "color:#F4F4F4">Cloudy With a Chance of Skeeballs</h1>
     </div>
-  </div>
+    </div>
+    </div>
 </nav>
 
+    <div class="jumbotron" style = "background-color: #fce17e">
 
-    <div class="jumbotron">
-
-  <div class="container text-center">
+  <div class="container text-center" >
     <h1>Today's Weather</h1>
+    <hr>
     <br>
     <font size=5>
     <b>{{weatherdata[0]["title"]}} <br>
     Desciption: {{weatherdata[0]["fcttext"]}} <a href='events?period=0'>Check Events</a><br><br>
     {{weatherdata[1]["title"]}}<br>
     Desciption: {{weatherdata[1]["fcttext"]}} <a href='events?period=1'>Check Events</a></b><br><br>
-  </font>
+    </font>
+    <hr>
     <h2>The Three-Day Forecast</h2>
     <br>
     {% for period in weatherdata %}
@@ -42,7 +54,7 @@
   </div>
 <hr>
 
-  <footer class="container-fluid text-center">
+  <footer class="container-fluid text-center" style = "background-color: #ffa260;border-style:none">
   <p>cYES</p>
   </footer>
   </div>

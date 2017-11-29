@@ -72,10 +72,9 @@ def event_page():
             return render_template("error.html")
         bform = book_call[1]
         return render_template("books.html", name=session["name"], bookdata=bform)
-            
-    
-    return render_template("events.html", name=session["name"])
-
+    else:
+        events = api.fiveEvents(zipcode)
+        return render_template("events.html", name=session["name"], events=events)
 
 if __name__ == "__main__":
     app.debug = True

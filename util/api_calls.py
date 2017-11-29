@@ -34,7 +34,7 @@ def readingKeys(file):
     weather_url = "http://api.wunderground.com/api/" + weather_key + "/forecast/q/"
     book_url = "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json" \
                + "?api-key=" + book_key +"&age-group="
-    events_url = ""
+    events_url = "https://www.eventbriteapi.com/v3/events/search/?token=" + events_key + "&q=outdoors&location.address=<zipcode>&location.within=50mi"
     return True
 
 def weathercall(zipcode):
@@ -63,28 +63,6 @@ def weathercall(zipcode):
         print "Could not find location"
         currentForeCast = "Could not find location"
         return (False,)
-        
-    '''
-    try:
-        geoResp = urllib2.urlopen(geo_url + str(zipcode) + ".json")
-        gdata= geoResp.read()
-        gform= json.loads(gdata)
-        print "retrieving data from " + geo_url + str(zipcode) +".json"
-        #change zip code to appropriate city and state
-        location= gform["location"]["requesturl"]
-        location= location.replace("html", "json")
-        #now actually getting the weather
-        print "retrieving data from " + weather_url  + location
-        weatherResp = urllib2.urlopen(weather_url + location)
-        wdata = weatherResp.read()
-        wform= json.loads(wdata)
-        forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
-        currentForecast = forecasts
-        return (True, forecasts)
-    except:
-        print "FAILED ATTEMPT"
-        return (False,)
-    '''
 
 def getweather(data, period):
     try:
@@ -116,8 +94,35 @@ def bookcall(age):
     except:
         return (False,)
 
+def fiveEvents(zipcode):
+    retList = []
+    print events_url
+    events = events_url.replace("<zipcode>", str(zipcode))
+    response = urllib2.urlopen(events_url)
+    url = response.geturl()
+    info = response.read()
+    info = json.loads(info)
+    #print info
+    i = 0
+    while i < 5:
+        button = '<form action="<url>"><input type="submit" value="See event"></form>'
+        try:
+            a = []
+            a.append(info["events"][i]["name"]["text"]) 
+            a.append( info["events"][i]["description"]["text"])
+            a.append(info["events"][i]["url"])
+            retList.append(a)
+            i += 1
+        except:
+            retList[i] = "STOP"
+            break;
+    ## print retList
+    return retList
+
 # Testing
 print readingKeys("keys.txt")
 print geo_url
 print weather_url
 weathercall(11229)
+
+fiveEvents(11229)

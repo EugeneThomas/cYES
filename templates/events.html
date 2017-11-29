@@ -34,14 +34,20 @@
     <div class="jumbotron" style = "background-color: #fce17e">
 
   <div class="container text-center">
-    <h1>Happening near you</h1>
+    <h1>Happening near you:</h1>
     <br>
     <hr>
-    <!-- INSERT EVENTS FOR STATEMENT OR SOMETHING HERE
-
-
-
-	 LOOK HERE!!!!-->
+    {% for event in events %}
+    <h2><strong>{{ event[0] }}</h2></strong>
+    <h3>
+      {{event[1]}}<br><br>
+      <form action="{{event[2]}}"><input class="btn btn-warning btn-lg" style="background-color:#ffa260;border-color:#ff7200" type="submit" value="See event"></form><br>
+<hr>
+    </h3>
+    <br>
+    {% endfor %}
+    <br>
+    <form action="https://www.eventbrite.com/"><input class="btn btn-warning btn-lg" style="background-color:#ffa260;border-color:#ff7200" type="submit" value="More events"></form><br>
   </div>
   <center>
     <a href="/" class="btn btn-warning btn-lg" role="button" style="background-color:#ffa260;border-color:#ff7200">Return Home</a>

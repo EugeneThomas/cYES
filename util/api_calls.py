@@ -17,30 +17,48 @@ global book_url
 global events_url
 
 # Variable to hold latest forecast for analysis
-global retreivedForecast
+global currentForecast
 
-print "Reading keys..."
-with open("../keys.txt","r") as l:
-    book_key = l.readline().strip()
-    print book_key
-    events_key = l.readline().strip()
-    print events_key
-    weather_key = l.readline().strip()
-    print weather_key
-    #URLS
+# Setup: read in keys and set urls
+def readingKeys(file):
+    print "Reading keys..."
+    with open(file,"r") as l:
+        book_key = l.readline().strip()
+        print book_key
+        events_key = l.readline().strip()
+        print events_key
+        weather_key = l.readline().strip()
+        print weather_key
+    # Set base URLs
     geo_url = "http://api.wunderground.com/api/" + weather_key + "/geolookup/q/"
     weather_url = "http://api.wunderground.com/api/" + weather_key + "/forecast/q/"
     book_url = "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json" \
                + "?api-key=" + book_key +"&age-group="
     events_url = ""
-
+    return True
 
 def weathercall(zipcode):
+    geoResp = urllib2.urlopen(geo_url + str(zipcode) + ".json")
+    gdata= geoResp.read()
+    gform= json.loads(gdata)
+    print "retrieving data from " + geo_url + str(zipcode) +".json"
+    #change zip code to appropriate city and state
+    location= gform["location"]["requesturl"]
+    location= location.replace("html", "json")
+    #now actually getting the weather
+    print "retrieving data from " + weather_url  + location
+    weatherResp = urllib2.urlopen(weather_url + location)
+    wdata = weatherResp.read()
+    wform= json.loads(wdata)
+    forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
+    currentForecast = forecasts
+    return (True, forecasts)
+    '''
     try:
-        geoResp = urllib2.urlopen(geo_url + zipcode + ".json")
+        geoResp = urllib2.urlopen(geo_url + str(zipcode) + ".json")
         gdata= geoResp.read()
         gform= json.loads(gdata)
-        print "retrieving data from " + geo_url + zipcode +".json"
+        print "retrieving data from " + geo_url + str(zipcode) +".json"
         #change zip code to appropriate city and state
         location= gform["location"]["requesturl"]
         location= location.replace("html", "json")
@@ -50,9 +68,12 @@ def weathercall(zipcode):
         wdata = weatherResp.read()
         wform= json.loads(wdata)
         forecasts = wform["forecast"]["txt_forecast"]["forecastday"]
+        currentForecast = forecasts
         return (True, forecasts)
     except:
+        print "FAILED ATTEMPT"
         return (False,)
+    '''
 
 def getweather(data, period):
     try:
@@ -85,9 +106,12 @@ def bookcall(age):
         return (False,)
 
 def getTemp():
-    print "RETREIVED FORECAST: ", retrievedForecast
+    print "RETREIVED FORECAST: ", currentForecast
     return True
 
 # Testing
+print readingKeys("testKeys.txt")
+print geo_url
+print weather_url
 weathercall(11229)
 getTemp()

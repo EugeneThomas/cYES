@@ -56,7 +56,7 @@ def event_page():
         month += 1
     if temperature < 30: #too cold, go read a book
         #code for api call have been moved to util/api_calls.py
-        bform = api.bookcall(age)
+        bform = api.bookcall(session["age"])
         return render_template("books.html", name=session["name"], bookdata=bform)
     
     return render_template("events.html", name=session["name"])

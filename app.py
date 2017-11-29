@@ -32,7 +32,12 @@ def display_info():
     #retrieving weather data
     session["zipcode"]=request.args["zipcode"]
     #code for api call have been moved to util/api_calls.py
-    session["wform"]= api.weathercall(session["zipcode"])
+    
+    weather_call= api.weathercall(session["zipcode"])
+    if not weather_call[0]:
+        flash("Looks like there's a problem with your weather key, or you didn't fill in your zip code.")
+        return render_template("error.html")
+    session["wform"] = weather_call[1]
     #retrieving book data
     session["age"]=request.args["age"]
 
@@ -41,7 +46,16 @@ def display_info():
 @app.route("/events")
 def event_page():
     period = int(request.args["period"])    
-    forecast = api.getweather(session["wform"], period)
+    try:
+        getweather = api.getweather(session["wform"], period)
+    except:
+        flash("You need to fill out the form first!")
+        return render_template("error.html")
+    if not getweather[0]:
+        flash("Looks like the weather api isn't cooperating. Try again?")
+        return render_template("error.html")
+    
+    forecast = getweather[1]
 
     #IMPORTANT STUFF HERE::::
     description = forecast[0]
@@ -56,7 +70,11 @@ def event_page():
         month += 1
     if temperature < 30: #too cold, go read a book
         #code for api call have been moved to util/api_calls.py
-        bform = api.bookcall(session["age"])
+        book_call = api.bookcall(session["age"])
+        if not book_call[0]:
+            flash("Looks like there was an error with your NYT book key, or you didn't fill in your age.")
+            return render_template("error.html")
+        bform = book_call[1]
         return render_template("books.html", name=session["name"], bookdata=bform)
     
     return render_template("events.html", name=session["name"])

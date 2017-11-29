@@ -14,14 +14,10 @@ now = datetime.datetime.now()
 app = Flask (__name__)
 app.secret_key = os.urandom(32)
 
-
-
 #home route, takes zipcode and other inputs
 @app.route("/")
 def hello_world():
     print "**DIAG: has api key been acquired?**"
-
-    '''will figure out how to display keys at later date'''
     return render_template("base.html")
 
 #reach out to apis and acquire info
@@ -76,6 +72,7 @@ def event_page():
             return render_template("error.html")
         bform = book_call[1]
         return render_template("books.html", name=session["name"], bookdata=bform)
+            
     
     return render_template("events.html", name=session["name"])
 

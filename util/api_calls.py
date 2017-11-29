@@ -7,17 +7,6 @@
 import urllib2
 import json
 
-# Global Variables
-'''
-global book_key
-global events_key
-global weather_key
-global geo_url
-global weather_url
-global book_url
-global events_url
-'''
-
 # Variable to hold latest forecast for analysis
 # global currentForecast
 
@@ -53,10 +42,15 @@ def weathercall(zipcode):
     gdata= geoResp.read()
     gform= json.loads(gdata)
     print "retrieving data from " + geo_url + str(zipcode) +".json"
-    try:
+    try: 
         #change zip code to appropriate city and state
         location= gform["location"]["requesturl"]
+        print location
+        print "+++++++++++++++++++++++++++++++++++++++++++++++++"
         location= location.replace("html", "json")
+        print location
+        print "+++++++++++++++++++++++++++++++++++++++++++++++++"
+        
         #now actually getting the weather
         print "retrieving data from " + weather_url  + location
         weatherResp = urllib2.urlopen(weather_url + location)
@@ -123,7 +117,7 @@ def bookcall(age):
         return (False,)
 
 # Testing
-print readingKeys("testKeys.txt")
+print readingKeys("keys.txt")
 print geo_url
 print weather_url
 weathercall(11229)

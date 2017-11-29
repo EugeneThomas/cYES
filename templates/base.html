@@ -49,18 +49,19 @@ P01 -- ArRESTed Development
       <a href="https://www.fandango.com/moviesintheaters" class="btn btn-warning" role="button" style="background-color:#ffa260;border-color:#ff7200">Movies in Theaters</a>
     </div>
     <div class="col-sm-8 text-left">
-<br>
+      <br>
+      {% set msgs = get_flashed_messages() %}
+	{% for message in msgs %}
+		Message: {{message}}
+	{% endfor %}
       <form action="/info">
 	<label>Name:</label>
-	<p>{{flash_name}}</p>
       <input type="text" class="form-control" id="name" placeholder="Enter name..." name="name">
   <br>
-  <label>Zipcode:</label>
-  	<p>{{flash_zip}}</p>
+  <label>Zipcode:</label> 
 	  <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode..." name="zipcode">
 	<br>
 	<label>Age:</label>
-		<p>{{flash_age}}</p>
 	<input type="text" class="form-control" id="age" placeholder="Enter age..." name="age">
 	<br>
 	<center> <input type="submit" class="btn btn-info" value="Search!" style="background-color:#ffa260;border-color:#ff7200"> </center>

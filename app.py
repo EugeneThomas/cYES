@@ -18,7 +18,11 @@ app.secret_key = os.urandom(32)
 @app.route("/")
 def hello_world():
     print "**DIAG: has api key been acquired?**"
-    return render_template("base.html")
+    try:
+        api.readingKeys("keys.txt")
+        return render_template("base.html")
+    except:
+        return render_template("base.html", message="We had trouble reading your API keys. Please try adding them again.")
 
 #reach out to apis and acquire info
 @app.route("/info")

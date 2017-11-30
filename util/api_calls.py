@@ -120,9 +120,9 @@ def fiveEvents(zipcode):
     return retList
 
 # Testing
-print readingKeys("keys.txt")
-print geo_url
-print weather_url
-weathercall(11229)
+# print readingKeys("keys.txt")
+# print geo_url
+# print weather_url
+# weathercall(11229)
 
-fiveEvents(11229)
+# fiveEvents(11229)
